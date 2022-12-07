@@ -1,7 +1,8 @@
 {
-  "name": "group",
+  "name": "lucky-group-task",
   "version": "0.1.0",
   "private": true,
+  "author": "Fpsska",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.16.5",
