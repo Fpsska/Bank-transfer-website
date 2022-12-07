@@ -1,0 +1,9 @@
+@import '../../assets/styles/functions';
+
+// /. imports
+
+.logo {
+    &__image {
+        margin-right: useRem(10);
+    }
+}

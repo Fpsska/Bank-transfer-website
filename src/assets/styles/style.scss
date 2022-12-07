@@ -19,3 +19,11 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
 }
+
+// /. general styles
+
+.container {
+    max-width: useRem(1165); // 1145px
+    margin: 0 auto;
+    padding: 0 useRem(10);
+}

@@ -1,0 +1,26 @@
+@import '../../assets/styles/functions';
+
+// /. imports
+
+.header {
+    &__wrapper {
+        padding: useRem(30) 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.header {
+    &__wrapper {
+        gap: 10px;
+    }
+
+    &__button {
+        background-color: $green-color;
+        padding: useRem(8) useRem(22);
+        color: $white-color;
+        font-weight: 500;
+        border-radius: useRem(20);
+    }
+}
