@@ -1,0 +1,83 @@
+@import './functions';
+
+// /. imports
+
+@media screen and (max-width: 992px) {
+    .about__wrapper.about__wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'content'
+            'users'
+            'preview';
+        gap: useRem(50);
+    }
+
+    .about__peview.about__peview,
+    .about__users.about__users {
+        justify-content: center;
+    }
+
+    .about__users.about__users {
+        padding: 0;
+    }
+
+    .about .circle {
+        margin-bottom: useRem(40);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .header__nav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .about .about__peview {
+        display: none;
+    }
+
+    .container.container {
+        padding: 0 useRem(20);
+    }
+
+    .about__wrapper.about__wrapper {
+        grid-template-areas:
+            'content'
+            'users';
+    }
+
+    .about .about__wrapper {
+        padding: useRem(50) 0 useRem(20) 0;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .about .about__title {
+        font-size: useRem(42);
+        line-height: useRem(52);
+    }
+
+    .about .about__users {
+        flex-direction: column;
+    }
+
+    .about__users-info.about__users-info {
+        text-align: center;
+    }
+
+    .callRequest-form__input.callRequest-form__input {
+        padding: useRem(20) useRem(70) useRem(20) useRem(20);
+    }
+
+    .callRequest-form__button.callRequest-form__button {
+        height: useRem(50);
+        width: useRem(50);
+        margin: useRem(3);
+    }
+
+    .users-list__template.users-list__template {
+        width: useRem(48);
+        height: useRem(48);
+    }
+}

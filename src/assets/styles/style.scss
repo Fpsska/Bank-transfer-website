@@ -1,6 +1,7 @@
 @import './vars';
 @import './reset';
 @import './functions';
+@import './media';
 
 // /. imports
 
@@ -45,7 +46,6 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 0 useRem(40);
-    // height: 100%;
 }
 
 .button {
@@ -68,7 +68,7 @@ body {
 
     &__wrapper {
         display: grid;
-        grid-template-columns: repeat(12, 1fr);
+        grid-template-columns: 1fr 1fr;
         grid-template-areas: 'content preview'
             'users preview';
         gap: useRem(40) useRem(10);
@@ -78,7 +78,6 @@ body {
 
     &__content {
         grid-area: content;
-        grid-column: 6 span;
     }
 
     &__peview {
@@ -86,7 +85,6 @@ body {
         justify-content: flex-end;
         position: relative;
         grid-area: preview;
-        grid-column: 6 span;
     }
 
     &__background {
@@ -129,14 +127,13 @@ body {
     }
 
     &__link {
-        display: block;
+        display: inline-block;
         padding: useRem(12) useRem(22);
         margin-bottom: useRem(50);
     }
 
     &__users {
         grid-area: users;
-        grid-column: 6 span;
         display: flex;
         align-items: center;
         gap: useRem(12);

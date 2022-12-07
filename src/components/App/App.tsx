@@ -26,14 +26,13 @@ const App: React.FC = () => {
                         <div className="about__wrapper">
                             <div className="about__content">
                                 <h1 className="about__title">
-                                    Now Buy Your <br /> PIN or{' '}
-                                    <span>Top Up</span> <br /> With Bank
-                                    Transfer
+                                    Now Buy Your PIN or <span>Top Up</span> With
+                                    Bank Transfer
                                 </h1>
                                 <p className="about__description">
                                     We Make international calling simple,
-                                    relible, and cheap <br /> basedon your
-                                    unique calling behavior.
+                                    relible, and cheap basedon your unique
+                                    calling behavior.
                                 </p>
                                 <a
                                     className="about__link button"
