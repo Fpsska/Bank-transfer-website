@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 
 import Header from '../Header/Header';
 import UserList from '../User/UserList';
@@ -17,6 +17,31 @@ import person from '../../assets/images/promoter.png';
 // /. imports
 
 const App: React.FC = () => {
+    const [inputValue, setInputValue] = useState<string>('');
+
+    const formRef = useRef<HTMLFormElement>(null!);
+
+    // /. hooks
+
+    const onInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+        const value = e.target.value;
+        const outputValue = value.replace(/[!@#$%^&*()]/g, '');
+        setInputValue(outputValue);
+    };
+
+    const onFormSubmit = (e: React.FormEvent): void => {
+        e.preventDefault;
+        //
+        console.log('sending data: ', {
+            time: new Date().toLocaleString(),
+            phone: inputValue
+        });
+        setInputValue('');
+        formRef.current.reset();
+    };
+
+    // /. functions
+
     return (
         <div className="App">
             <Header />
@@ -40,11 +65,19 @@ const App: React.FC = () => {
                                 >
                                     Get Started
                                 </a>
-                                <form className="about__form callRequest-form">
+                                <form
+                                    className="about__form callRequest-form"
+                                    ref={formRef}
+                                    onSubmit={e =>
+                                        inputValue && onFormSubmit(e)
+                                    }
+                                >
                                     <input
                                         className="callRequest-form__input"
                                         type="text"
                                         placeholder="Where do you want to call?"
+                                        value={inputValue}
+                                        onChange={e => onInputChange(e)}
                                     />
                                     <button
                                         className="callRequest-form__button"
