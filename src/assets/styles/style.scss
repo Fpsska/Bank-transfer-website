@@ -20,11 +20,10 @@ body {
     font-weight: 400;
 }
 
-// /. general styles
-
 #root,
 .App {
-    height: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .App {
@@ -36,8 +35,112 @@ body {
     flex: 1 0 auto;
 }
 
+// /. general styles
+
 .container {
     max-width: useRem(1165); // 1145px
     margin: 0 auto;
     padding: 0 useRem(10);
+}
+
+.button {
+    background-color: $green-color;
+    padding: useRem(8) useRem(22);
+    color: $white-color;
+    font-weight: 500;
+    border-radius: useRem(20);
+    transition: all .25s ease-in-out;
+
+    &:hover {
+        color: $dark-color;
+    }
+}
+
+// /. reusable styles
+
+.about {
+
+    &__wrapper {
+        padding: useRem(120) 0 0 0;
+    }
+
+    &__title {
+        font-size: useRem(48);
+        font-weight: 700;
+        line-height: useRem(65);
+        color: $dark-color;
+
+        span {
+            color: $orange-color;
+        }
+    }
+
+    &__description {
+        font-size: useRem(15);
+        color: $gray-color;
+        line-height: useRem(26);
+        font-weight: 500;
+        margin: useRem(22) 0 useRem(30) 0;
+    }
+
+    &__link {
+        display: block;
+        padding: useRem(12) useRem(22);
+        margin-bottom: useRem(50);
+    }
+}
+
+.callRequest-form {
+    position: relative;
+
+    &__input {
+        width: 100%;
+        border: none;
+        box-shadow: 0 useRem(20) useRem(30) rgba(222, 222, 222, 0.25);
+        border-radius: useRem(100);
+        background-color: $white-color;
+        padding: useRem(24) useRem(70) useRem(24) useRem(40);
+
+        color: #A1A1A1;
+        font-weight: 400;
+        letter-spacing: useRem(0.5);
+
+        &:focus {
+            outline: 1px solid $orange-color;
+        }
+
+        &::placeholder {
+            font-size: useRem(16);
+            color: #A1A1A1;
+            font-weight: 400;
+            letter-spacing: useRem(0.5);
+        }
+    }
+
+    &__button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $green-color;
+        border-radius: 100%;
+        margin: useRem(5);
+        height: useRem(55);
+        width: useRem(55);
+        overflow: hidden;
+
+        &:hover {
+            svg {
+                stroke: $dark-color;
+            }
+        }
+
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all .25s ease-in-out;
+            stroke: $white-color;
+        }
+    }
 }

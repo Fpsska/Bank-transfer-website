@@ -18,7 +18,7 @@ const Header: React.FC = () => {
                         img={logo}
                     />
                     <Nav role={'header__nav'} />
-                    <button className="header__button">Sign Up</button>
+                    <button className="header__button button">Sign Up</button>
                 </div>
             </div>
         </header>
