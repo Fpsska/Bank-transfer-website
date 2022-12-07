@@ -6,7 +6,7 @@
     flex: 0 0 auto;
 
     &__wrapper {
-        padding: useRem(30) 0;
+        padding: useRem(30) 0 useRem(20) 0;
         display: flex;
         justify-content: space-between;
         align-items: center;

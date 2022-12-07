@@ -1,10 +1,18 @@
 import React from 'react';
 
 import Header from '../Header/Header';
+import UserList from '../User/UserList';
 import Footer from '../Footer/Footer';
 
 import './App.css';
 import '../../assets/styles/style.scss';
+
+import flag_1 from '../../assets/images/flag-icon_1.svg';
+import flag_2 from '../../assets/images/flag-icon_2.svg';
+import flag_3 from '../../assets/images/flag-icon_3.svg';
+import flag_4 from '../../assets/images/flag-icon_4.svg';
+
+import person from '../../assets/images/promoter.png';
 
 // /. imports
 
@@ -68,6 +76,49 @@ const App: React.FC = () => {
                                         </svg>
                                     </button>
                                 </form>
+                            </div>
+                            <div className="about__peview">
+                                {/* <div className="about__background"></div> */}
+                                <img
+                                    className="about__background-img"
+                                    src={person}
+                                    alt="promoter"
+                                />
+                                <div className="circle">
+                                    <img
+                                        className="circle__image"
+                                        src={flag_1}
+                                        alt="flag"
+                                    />
+                                    <img
+                                        className="circle__image"
+                                        src={flag_2}
+                                        alt="flag"
+                                    />
+                                    <img
+                                        className="circle__image"
+                                        src={flag_3}
+                                        alt="flag"
+                                    />
+                                    <img
+                                        className="circle__image"
+                                        src={flag_4}
+                                        alt="flag"
+                                    />
+                                    <img
+                                        className="circle__image"
+                                        src={flag_1}
+                                        alt="flag"
+                                    />
+                                    <div className="circle__center"></div>
+                                </div>
+                            </div>
+                            <div className="about__users">
+                                <UserList role={'about__users-list'} />
+                                <p className="about__users-info">
+                                    45k+ Regular User.{' '}
+                                    <a href="#">View Price Plan</a>
+                                </p>
                             </div>
                         </div>
                     </section>
