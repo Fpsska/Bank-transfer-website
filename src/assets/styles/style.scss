@@ -1,0 +1,21 @@
+@import './vars';
+@import './reset';
+@import './functions';
+
+// /. imports
+
+html,
+body {
+    font-size: #{$font-size}px;
+    height: 100%;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ECF7F3;
+    color: $dark-color;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
