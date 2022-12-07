@@ -1,0 +1,27 @@
+@import '../../assets/styles/functions';
+
+.footer {
+    flex: 0 0 auto;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: useRem(12);
+        padding: useRem(40) 0 useRem(44) 0;
+    }
+
+    &__users-list {
+        margin-right: useRem(12);
+    }
+
+    &__info {
+        font-weight: 500;
+        font-family: 'Roboto', sans-serif;
+        line-height: useRem(18.75);
+        color: $gray-color;
+
+        span {
+            color: $orange-color;
+        }
+    }
+}

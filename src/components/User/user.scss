@@ -1,0 +1,63 @@
+@import '../../assets/styles/functions';
+
+// /. imports
+
+.users-list {
+    display: flex;
+
+    &__template {
+        position: relative;
+        width: useRem(38);
+        height: useRem(38);
+        overflow: hidden;
+        border-radius: 100%;
+        border: 2px solid $white-color;
+        margin-right: useRem(-16);
+
+        &:first-child {
+            z-index: 1;
+        }
+
+        &:nth-child(2) {
+            z-index: 0;
+        }
+
+        &:nth-child(3) {
+            z-index: -1;
+        }
+
+        &:nth-child(4) {
+            z-index: -2;
+        }
+    }
+
+    &__template--add {
+        background-color: $orange-color;
+
+        &:hover {
+            cursor: pointer;
+
+            svg {
+                stroke: $dark-color;
+            }
+        }
+
+        svg {
+            flex-shrink: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            stroke: $white-color;
+            transition: all .25s ease-in-out;
+        }
+    }
+
+    &__image {
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

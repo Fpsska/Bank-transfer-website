@@ -3,6 +3,8 @@
 // /. imports
 
 .header {
+    flex: 0 0 auto;
+
     &__wrapper {
         padding: useRem(30) 0;
         display: flex;

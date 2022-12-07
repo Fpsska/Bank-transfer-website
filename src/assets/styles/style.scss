@@ -22,6 +22,20 @@ body {
 
 // /. general styles
 
+#root,
+.App {
+    height: 100%;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1 0 auto;
+}
+
 .container {
     max-width: useRem(1165); // 1145px
     margin: 0 auto;
