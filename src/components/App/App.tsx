@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Route, Routes } from 'react-router';
+
+import { useAppSelector, useAppDispatch } from '../../app/hooks';
+
+import { fetchTextData } from '../../app/api/fetchTextData';
 
 import Layout from '../common/Layout';
 import MainPage from '../pages/MainPage';
@@ -13,6 +17,16 @@ import '../../assets/styles/style.scss';
 // /. imports
 
 const App: React.FC = () => {
+    const dispatch = useAppDispatch();
+
+    // /. hooks
+
+    useEffect(() => {
+        dispatch(fetchTextData());
+    }, []);
+
+    // /. effects
+
     return (
         <div className="App">
             <Routes>

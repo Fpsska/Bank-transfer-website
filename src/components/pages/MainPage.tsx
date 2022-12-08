@@ -1,8 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 
-import { useAppSelector, useAppDispatch } from '../../app/hooks';
-
-import { fetchTextData } from '../../app/api/fetchTextData';
+import { useAppSelector } from '../../app/hooks';
 
 import { useInput } from '../../hooks/useInput';
 
@@ -28,8 +26,6 @@ const MainPage: React.FC = () => {
         maxLength: 12
     });
 
-    const dispatch = useAppDispatch();
-
     // /. hooks
 
     const onInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -52,12 +48,6 @@ const MainPage: React.FC = () => {
     };
 
     // /. functions
-
-    useEffect(() => {
-        dispatch(fetchTextData());
-    }, []);
-
-    // /. effects
 
     return (
         <section className="about">
