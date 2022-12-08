@@ -1,4 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
+
+import { useInput } from '../../hooks/useInput';
 
 import Header from '../Header/Header';
 import UserList from '../User/UserList';
@@ -17,27 +19,32 @@ import person from '../../assets/images/promoter.png';
 // /. imports
 
 const App: React.FC = () => {
-    const [inputValue, setInputValue] = useState<string>('');
-
     const formRef = useRef<HTMLFormElement>(null!);
+
+    const phoneInput = useInput('', {
+        minLength: 4,
+        maxLength: 12
+    });
 
     // /. hooks
 
     const onInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         const value = e.target.value;
         const outputValue = value.replace(/[!@#$%^&*()]/g, '');
-        setInputValue(outputValue);
+        phoneInput.onInputChange(outputValue);
     };
 
     const onFormSubmit = (e: React.FormEvent): void => {
         e.preventDefault;
-        //
+        // ** //
         console.log('sending data: ', {
             time: new Date().toLocaleString(),
-            phone: inputValue
+            phone: phoneInput.value
         });
-        setInputValue('');
+        // ** //
+        phoneInput.onInputChange('');
         formRef.current.reset();
+        phoneInput.setInputActiveStatus(false);
     };
 
     // /. functions
@@ -69,20 +76,38 @@ const App: React.FC = () => {
                                     className="about__form callRequest-form"
                                     ref={formRef}
                                     onSubmit={e =>
-                                        inputValue && onFormSubmit(e)
+                                        phoneInput.value && onFormSubmit(e)
                                     }
                                 >
                                     <input
-                                        className="callRequest-form__input"
+                                        className={
+                                            phoneInput.isInputActive &&
+                                            !phoneInput.isInputValid
+                                                ? 'callRequest-form__input no-valid'
+                                                : 'callRequest-form__input'
+                                        }
                                         type="text"
                                         placeholder="Where do you want to call?"
-                                        value={inputValue}
+                                        required
+                                        value={phoneInput.value}
                                         onChange={e => onInputChange(e)}
+                                        onBlur={() => phoneInput.onInputBlur()}
                                     />
+                                    <>
+                                        {phoneInput.minLengthError &&
+                                            phoneInput.isInputActive && (
+                                                <span className="warn">{`minimum length is should be ${phoneInput.minLengthCount} letter`}</span>
+                                            )}
+                                        {phoneInput.maxLengthError &&
+                                            phoneInput.isInputActive && (
+                                                <span className="warn">{`maximum length is should be less ${phoneInput.maxLengthCount} letter`}</span>
+                                            )}
+                                    </>
                                     <button
                                         className="callRequest-form__button"
                                         type="submit"
                                         aria-label="get call request"
+                                        disabled={!phoneInput.isInputValid}
                                     >
                                         <svg
                                             width="27"

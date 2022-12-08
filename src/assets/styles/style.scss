@@ -61,6 +61,15 @@ body {
     }
 }
 
+.warn {
+    position: absolute;
+    left: useRem(0);
+    bottom: useRem(-20);
+    display: inline-block;
+    color: red;
+    font-size: useRem(13);
+}
+
 // /. reusable styles
 
 .about {
@@ -166,6 +175,7 @@ body {
         border-radius: useRem(100);
         background-color: $white-color;
         padding: useRem(24) useRem(70) useRem(24) useRem(40);
+        outline: 1px solid transparent;
 
         color: #A1A1A1;
         font-weight: 400;
@@ -183,6 +193,10 @@ body {
         }
     }
 
+    &__input.no-valid {
+        outline: 1px solid red;
+    }
+
     &__button {
         position: absolute;
         top: 0;
@@ -193,6 +207,16 @@ body {
         height: useRem(55);
         width: useRem(55);
         overflow: hidden;
+
+        &:disabled {
+            opacity: 0.6;
+
+            &:hover {
+                svg {
+                    stroke: $white-color;
+                }
+            }
+        }
 
         &:hover {
             svg {
