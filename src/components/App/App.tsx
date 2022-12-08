@@ -154,12 +154,6 @@ const App: React.FC = () => {
                                 </form>
                             </div>
                             <div className="about__peview">
-                                {/* <div className="about__background"></div> */}
-                                {/* <img
-                                    className="about__background-img"
-                                    src={person}
-                                    alt="promoter"
-                                /> */}
                                 <div className="circle">
                                     <div className="circle__template">
                                         <img
@@ -197,6 +191,11 @@ const App: React.FC = () => {
                                         />
                                     </div>
                                     <div className="circle__center"></div>
+                                    <img
+                                        className="circle__background-img"
+                                        src={person}
+                                        alt="promoter"
+                                    />
                                 </div>
                             </div>
                             <div className="about__users">
