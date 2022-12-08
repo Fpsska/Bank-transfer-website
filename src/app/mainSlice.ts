@@ -8,6 +8,7 @@ interface mainSliceTypes {
     subtitleText: string;
     requestStatus: string;
     requestError: null | string;
+    isBurgerVisible: boolean;
 }
 
 // /. interfaces
@@ -15,7 +16,8 @@ interface mainSliceTypes {
 const initialState: mainSliceTypes = {
     subtitleText: '',
     requestStatus: '',
-    requestError: null
+    requestError: null,
+    isBurgerVisible: false
 };
 
 // /. initialState
@@ -23,7 +25,11 @@ const initialState: mainSliceTypes = {
 const mainSlice = createSlice({
     name: 'mainSlice',
     initialState,
-    reducers: {},
+    reducers: {
+        swithBurgerVisibleStatus(state, action: PayloadAction<boolean>) {
+            state.isBurgerVisible = action.payload;
+        }
+    },
     extraReducers: {
         [fetchTextData.pending.type]: state => {
             state.requestStatus = 'loading';
@@ -45,6 +51,6 @@ const mainSlice = createSlice({
     }
 });
 
-// export const { } = mainSlice.actions;
+export const { swithBurgerVisibleStatus } = mainSlice.actions;
 
 export default mainSlice.reducer;

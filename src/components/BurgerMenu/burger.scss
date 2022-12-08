@@ -1,0 +1,129 @@
+@import '../../assets/styles/functions';
+
+// /. imports
+
+.burger {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: all .25s ease-in-out;
+    z-index: 2;
+    width: 100%;
+
+
+    &__wrapper {
+        width: 100%;
+        background-color: rgba($color: $dark-color, $alpha: 0.5);
+        padding: useRem(20);
+        border-radius: 0 0 10px 10px;
+    }
+
+    &__nav {
+        .nav__menu {
+            flex-direction: column;
+        }
+
+        .nav__item {
+            &:not(:last-child) {
+                margin: 0 0 useRem(10) 0;
+            }
+        }
+
+        .nav__link {
+            color: $white-color;
+
+            &::before {
+                // right: useRem(-20);
+                // left: auto;
+                // top: 50%;
+                // transform: translateY(-50%);
+                // border-radius: 100%;
+                // width: useRem(10);
+                // height: useRem(10);
+                display: none;
+            }
+        }
+
+        .nav__link.active {
+            color: $orange-color;
+        }
+    }
+}
+
+.burger.visible {
+    left: 0;
+}
+
+// /. burger-menu
+
+.burger-button {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    width: useRem(20);
+    height: useRem(15);
+    margin: useRem(8);
+    background-color: transparent;
+}
+
+.burger-button::before,
+.burger-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: useRem(1);
+    width: 100%;
+    background-color: $dark-color;
+    transition: transform 0.15s ease-in-out;
+}
+
+.burger-button {
+    &::before {
+        bottom: 0;
+        top: auto;
+    }
+
+    &::after {
+        top: 0;
+    }
+
+    span {
+        opacity: 1;
+        height: useRem(1);
+        width: 100%;
+        transition: all 0.1s ease;
+        background-color: $dark-color;
+    }
+}
+
+.burger-button.transformed {
+
+    span,
+    &::before,
+    &::after {
+        background-color: $white-color;
+    }
+}
+
+.burger-button.transformed {
+    &::before {
+        transform: rotate(45deg);
+        top: 50%;
+    }
+
+    &::after {
+        transform: rotate(-45deg);
+        top: 50%;
+    }
+
+    span {
+        opacity: 0;
+    }
+
+}
+
+// /. burger
