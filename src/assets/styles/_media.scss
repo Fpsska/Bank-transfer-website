@@ -47,9 +47,60 @@
             'users';
     }
 
+    // $circle-width: 350 !global;
+
+    // .circle__template.circle__template {
+    //     &:nth-child(1) {
+    //         width: useRem(30);
+    //         height: useRem(30);
+    //         animation-delay: -1s;
+    //     }
+
+    //     &:nth-child(1) {
+    //         animation-delay: -3s;
+    //         width: useRem(20);
+    //         height: useRem(20);
+    //     }
+
+    //     &:nth-child(2) {
+    //         animation-delay: -5s;
+    //         width: useRem(50);
+    //         height: useRem(50);
+    //     }
+
+    //     &:nth-child(3) {
+    //         animation-delay: -7s;
+    //         width: useRem(30);
+    //         height: useRem(30);
+    //     }
+
+    //     &:nth-child(4) {
+    //         animation-delay: -9s;
+    //         width: useRem(40);
+    //         height: useRem(40);
+    //     }
+
+    //     &:nth-child(5) {
+    //         animation-delay: -11s;
+    //         width: useRem(20);
+    //         height: useRem(20);
+    //     }
+    // }
+
+    // .circle__center.circle__center {
+    //     width: useRem(220);
+    //     height: useRem(220);
+    // }
+
+    .container.container {
+        padding: 0 useRem(20);
+    }
+
     .about .about__wrapper {
         padding: useRem(50) 0 useRem(20) 0;
     }
+
+
 }
 
 @media screen and (max-width: 425px) {

@@ -13,10 +13,9 @@ import Footer from '../Footer/Footer';
 import './App.css';
 import '../../assets/styles/style.scss';
 
-import flag_1 from '../../assets/images/flag-icon_1.svg';
-import flag_2 from '../../assets/images/flag-icon_2.svg';
-import flag_3 from '../../assets/images/flag-icon_3.svg';
-import flag_4 from '../../assets/images/flag-icon_4.svg';
+import flag_1 from '../../assets/images/flag_1.png';
+import flag_2 from '../../assets/images/flag_2.png';
+import flag_3 from '../../assets/images/flag_3.png';
 
 import person from '../../assets/images/promoter.png';
 
@@ -162,31 +161,41 @@ const App: React.FC = () => {
                                     alt="promoter"
                                 /> */}
                                 <div className="circle">
-                                    <img
-                                        className="circle__image"
-                                        src={flag_1}
-                                        alt="flag"
-                                    />
-                                    <img
-                                        className="circle__image"
-                                        src={flag_2}
-                                        alt="flag"
-                                    />
-                                    <img
-                                        className="circle__image"
-                                        src={flag_3}
-                                        alt="flag"
-                                    />
-                                    <img
-                                        className="circle__image"
-                                        src={flag_4}
-                                        alt="flag"
-                                    />
-                                    <img
-                                        className="circle__image"
-                                        src={flag_1}
-                                        alt="flag"
-                                    />
+                                    <div className="circle__template">
+                                        <img
+                                            className="circle__image"
+                                            src={flag_1}
+                                            alt="flag"
+                                        />
+                                    </div>
+                                    <div className="circle__template">
+                                        <img
+                                            className="circle__image"
+                                            src={flag_2}
+                                            alt="flag"
+                                        />
+                                    </div>
+                                    <div className="circle__template">
+                                        <img
+                                            className="circle__image"
+                                            src={flag_3}
+                                            alt="flag"
+                                        />
+                                    </div>
+                                    <div className="circle__template">
+                                        <img
+                                            className="circle__image"
+                                            src={flag_1}
+                                            alt="flag"
+                                        />
+                                    </div>
+                                    <div className="circle__template">
+                                        <img
+                                            className="circle__image"
+                                            src={flag_1}
+                                            alt="flag"
+                                        />
+                                    </div>
                                     <div className="circle__center"></div>
                                 </div>
                             </div>
