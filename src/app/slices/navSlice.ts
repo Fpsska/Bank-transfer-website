@@ -19,7 +19,7 @@ const initialState: navSliceTypes = {
         {
             id: 1,
             text: 'Mobile Top Up',
-            link: '/'
+            link: '/LuckyGroup-SPA-Task/'
         },
         {
             id: 2,

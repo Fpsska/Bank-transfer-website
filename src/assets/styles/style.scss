@@ -69,6 +69,13 @@ body {
     font-size: useRem(13);
 }
 
+.section-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 // /. reusable styles
 
 .about {

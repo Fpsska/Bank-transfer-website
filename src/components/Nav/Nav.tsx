@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { NavLink } from 'react-router-dom';
+
 import { useAppSelector } from '../../app/hooks';
 
 import './nav.scss';
@@ -30,12 +32,13 @@ const Nav: React.FC<propTypes> = props => {
                             className="nav__item"
                             key={template.id}
                         >
-                            <a
+                            <NavLink
                                 className="nav__link"
-                                href={template.link}
+                                to={template.link}
+                                state={template.text}
                             >
                                 {template.text}
-                            </a>
+                            </NavLink>
                         </li>
                     );
                 })}
