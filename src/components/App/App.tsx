@@ -1,4 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
+import { useAppSelector, useAppDispatch } from '../../app/hooks';
+
+import { fetchTextData } from '../../app/api/fetchTextData';
 
 import { useInput } from '../../hooks/useInput';
 
@@ -19,12 +23,18 @@ import person from '../../assets/images/promoter.png';
 // /. imports
 
 const App: React.FC = () => {
+    const { subtitleText, requestError, requestStatus } = useAppSelector(
+        state => state.mainSlice
+    );
+
     const formRef = useRef<HTMLFormElement>(null!);
 
     const phoneInput = useInput('', {
         minLength: 4,
         maxLength: 12
     });
+
+    const dispatch = useAppDispatch();
 
     // /. hooks
 
@@ -49,6 +59,12 @@ const App: React.FC = () => {
 
     // /. functions
 
+    useEffect(() => {
+        dispatch(fetchTextData());
+    }, []);
+
+    // /. effects
+
     return (
         <div className="App">
             <Header />
@@ -62,9 +78,13 @@ const App: React.FC = () => {
                                     Bank Transfer
                                 </h1>
                                 <p className="about__description">
-                                    We Make international calling simple,
-                                    relible, and cheap basedon your unique
-                                    calling behavior.
+                                    {requestError ? (
+                                        <span>Sorry, something went wrong</span>
+                                    ) : requestStatus !== 'success' ? (
+                                        <span>Waiting for data loading</span>
+                                    ) : (
+                                        subtitleText
+                                    )}
                                 </p>
                                 <a
                                     className="about__link button"
