@@ -1,4 +1,4 @@
-@import './vars';
+// @import './vars';
 @import './reset';
 @import './functions';
 @import './media';
@@ -10,7 +10,6 @@ body {
     font-size: #{$font-size}px;
     height: 100%;
 }
-
 
 body {
     margin: 0;
@@ -103,7 +102,7 @@ body {
         line-height: useRem(65);
         color: $dark-color;
 
-        span {
+        a {
             color: $orange-color;
         }
     }
@@ -219,10 +218,8 @@ body {
 .circle {
     z-index: -1;
     position: relative;
-    width: 450px;
-    height: 450px;
-    // width: #{$circle-width}px;
-    // height: #{$circle-width}px;
+    width: useRem(450);
+    height: useRem(450);
     border: useRem(1) solid #E8E8E8;
     border-radius: 100%;
 
@@ -243,9 +240,10 @@ body {
         height: 100%;
         object-fit: cover;
         position: absolute;
-        bottom: useRem(-1);
-        right: 50%;
-        transform: translateX(50%);
+        overflow: hidden;
+        bottom: useRem(-3);
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     &__template {
@@ -270,33 +268,33 @@ body {
         }
 
         &:nth-child(1) {
-            animation-delay: -3s;
             width: useRem(30);
             height: useRem(30);
+            animation-delay: -3s;
         }
 
         &:nth-child(2) {
-            animation-delay: -5s;
             width: useRem(60);
             height: useRem(60);
+            animation-delay: -5s;
         }
 
         &:nth-child(3) {
-            animation-delay: -7s;
             width: useRem(40);
             height: useRem(40);
+            animation-delay: -7s;
         }
 
         &:nth-child(4) {
-            animation-delay: -9s;
             width: useRem(50);
             height: useRem(50);
+            animation-delay: -9s;
         }
 
         &:nth-child(5) {
-            animation-delay: -11s;
             width: useRem(30);
             height: useRem(30);
+            animation-delay: -11s;
         }
     }
 
@@ -309,12 +307,10 @@ body {
 
 @keyframes spinAround {
     0% {
-        transform: rotate(0deg) translate(calc(-450px / 2)) rotate(0deg);
-        // transform: rotate(0deg) translate(calc(#{-$circle-width}px / 2)) rotate(0deg);
+        transform: rotate(0deg) translate(calc(useRem(-450) / 2)) rotate(0deg);
     }
 
     100% {
-        transform: rotate(360deg) translate(calc(-450px / 2)) rotate(-360deg);
-        // transform: rotate(360deg) translate(calc(#{-$circle-width}px / 2)) rotate(-360deg);
+        transform: rotate(360deg) translate(calc(useRem(-450) / 2)) rotate(-360deg);
     }
 }
