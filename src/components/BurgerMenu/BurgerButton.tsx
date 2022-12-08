@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 
-import { swithBurgerVisibleStatus } from '../../app/mainSlice';
+import { swithBurgerVisibleStatus } from '../../app/slices/mainSlice';
 
 import './burger.scss';
 

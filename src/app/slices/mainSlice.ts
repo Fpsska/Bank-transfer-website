@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { fetchTextData } from './api/fetchTextData';
+import { fetchTextData } from '../api/fetchTextData';
 
 // /. imports
 

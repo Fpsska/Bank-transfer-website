@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useAppSelector } from '../../app/hooks';
+
 import './nav.scss';
 
 // /. imports
@@ -13,41 +15,30 @@ interface propTypes {
 const Nav: React.FC<propTypes> = props => {
     const { role } = props;
 
+    // /. props
+
+    const { navTemplates } = useAppSelector(state => state.navSlice);
+
+    // /. hooks
+
     return (
         <nav className={`${role ? role : ''} nav`}>
             <ul className="nav__menu">
-                <li className="nav__item">
-                    <a
-                        className="nav__link active"
-                        href="#"
-                    >
-                        Mobile Top Up
-                    </a>
-                </li>
-                <li className="nav__item">
-                    <a
-                        className="nav__link"
-                        href="#"
-                    >
-                        About
-                    </a>
-                </li>
-                <li className="nav__item">
-                    <a
-                        className="nav__link"
-                        href="#"
-                    >
-                        Rate
-                    </a>
-                </li>
-                <li className="nav__item">
-                    <a
-                        className="nav__link"
-                        href="#"
-                    >
-                        Help
-                    </a>
-                </li>
+                {navTemplates.map(template => {
+                    return (
+                        <li
+                            className="nav__item"
+                            key={template.id}
+                        >
+                            <a
+                                className="nav__link"
+                                href={template.link}
+                            >
+                                {template.text}
+                            </a>
+                        </li>
+                    );
+                })}
             </ul>
         </nav>
     );
