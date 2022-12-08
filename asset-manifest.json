@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/LuckyGroup-SPA-Task/static/css/main.a1a0f171.css",
+    "main.js": "/LuckyGroup-SPA-Task/static/js/main.7548fafc.js",
+    "static/js/787.c65cb102.chunk.js": "/LuckyGroup-SPA-Task/static/js/787.c65cb102.chunk.js",
+    "static/media/promoter.png": "/LuckyGroup-SPA-Task/static/media/promoter.dd952cd0f3bfc664804c.png",
+    "static/media/flag_1.png": "/LuckyGroup-SPA-Task/static/media/flag_1.da00b23d67ddd41a85b1.png",
+    "static/media/flag_2.png": "/LuckyGroup-SPA-Task/static/media/flag_2.a5ce1648ff80705ffae7.png",
+    "static/media/flag_3.png": "/LuckyGroup-SPA-Task/static/media/flag_3.ea614717e68131976658.png",
+    "static/media/logo-icon.svg": "/LuckyGroup-SPA-Task/static/media/logo-icon.d121f988088348294acd4a0db1efc179.svg",
+    "index.html": "/LuckyGroup-SPA-Task/index.html",
+    "main.a1a0f171.css.map": "/LuckyGroup-SPA-Task/static/css/main.a1a0f171.css.map",
+    "main.7548fafc.js.map": "/LuckyGroup-SPA-Task/static/js/main.7548fafc.js.map",
+    "787.c65cb102.chunk.js.map": "/LuckyGroup-SPA-Task/static/js/787.c65cb102.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a1a0f171.css",
+    "static/js/main.7548fafc.js"
+  ]
+}
