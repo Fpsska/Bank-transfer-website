@@ -66,18 +66,19 @@ const MainPage: React.FC = () => {
                             subtitleText
                         )}
                     </p>
-                    <a
-                        className="about__link button"
-                        href="#"
-                    >
-                        Get Started
-                    </a>
                     <form
                         className="about__form callRequest-form"
                         ref={formRef}
                         onSubmit={e => phoneInput.value && onFormSubmit(e)}
                     >
+                        <label
+                            className="callRequest-form__label"
+                            htmlFor="phone-input"
+                        >
+                            Get Started
+                        </label>
                         <input
+                            id="phone-input"
                             className={
                                 phoneInput.isInputActive &&
                                 !phoneInput.isInputValid
@@ -94,11 +95,11 @@ const MainPage: React.FC = () => {
                         <>
                             {phoneInput.minLengthError &&
                                 phoneInput.isInputActive && (
-                                    <span className="warn">{`minimum length is should be ${phoneInput.minLengthCount} letter`}</span>
+                                    <span className="warn warn-form">{`minimum length is should be ${phoneInput.minLengthCount} letter`}</span>
                                 )}
                             {phoneInput.maxLengthError &&
                                 phoneInput.isInputActive && (
-                                    <span className="warn">{`maximum length is should be less ${phoneInput.maxLengthCount} letter`}</span>
+                                    <span className="warn warn-form">{`maximum length is should be less ${phoneInput.maxLengthCount} letter`}</span>
                                 )}
                         </>
                         <button

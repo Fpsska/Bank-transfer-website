@@ -62,11 +62,14 @@ body {
 
 .warn {
     position: absolute;
-    left: useRem(0);
-    bottom: useRem(-20);
     display: inline-block;
     color: red;
     font-size: useRem(13);
+}
+
+.warn-form {
+    left: useRem(3);
+    bottom: useRem(-20);
 }
 
 .section-title {
@@ -121,12 +124,6 @@ body {
         line-height: useRem(26);
         font-weight: 500;
         margin: useRem(22) 0 useRem(30) 0;
-    }
-
-    &__link {
-        display: inline-block;
-        padding: useRem(12) useRem(22);
-        margin-bottom: useRem(50);
     }
 
     &__users {
@@ -185,13 +182,25 @@ body {
         outline: 1px solid red;
     }
 
+    &__label {
+        @extend .button;
+        display: inline-block;
+        padding: useRem(12) useRem(22);
+        margin-bottom: useRem(50);
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
     &__button {
         position: absolute;
-        top: 0;
+        top: auto;
         right: 0;
+        bottom: 0;
         background-color: $green-color;
         border-radius: 100%;
-        margin: useRem(5);
+        margin: useRem(4) useRem(5);
         height: useRem(55);
         width: useRem(55);
         overflow: hidden;

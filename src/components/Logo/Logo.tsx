@@ -15,14 +15,17 @@ const Logo: React.FC<propTypes> = props => {
     const { role, img } = props;
 
     return (
-        <div className={`${role ? role : ''} logo`}>
+        <a
+            href="#"
+            className={`${role ? role : ''} logo`}
+        >
             <img
                 className="logo__image"
                 src={img}
                 alt="logo"
             />
             <span className="logo__text">Global</span>
-        </div>
+        </a>
     );
 };
 
