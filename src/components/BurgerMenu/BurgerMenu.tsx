@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { useAppSelector } from '../../app/hooks';
+import { useAppSelector, useAppDispatch } from '../../app/hooks';
+
+import { swithBurgerVisibleStatus } from '../../app/slices/mainSlice';
 
 import Nav from '../Nav/Nav';
 
@@ -21,7 +23,15 @@ const BurgerMenu: React.FC<propsTypes> = props => {
 
     const { isBurgerVisible } = useAppSelector(state => state.mainSlice);
 
+    const dispatch = useAppDispatch();
+
     // /. hooks
+
+    const onBurgerNavLinkClick = (): void => {
+        dispatch(swithBurgerVisibleStatus(false));
+    };
+
+    // /. functions
 
     return (
         <div
@@ -30,7 +40,10 @@ const BurgerMenu: React.FC<propsTypes> = props => {
             }
         >
             <div className="burger__wrapper">
-                <Nav role={'burger__nav'} />
+                <Nav
+                    role={'burger__nav'}
+                    navLinkHandler={onBurgerNavLinkClick}
+                />
             </div>
         </div>
     );

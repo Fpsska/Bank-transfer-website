@@ -18,6 +18,7 @@ const Logo: React.FC<propTypes> = props => {
         <a
             href="#"
             className={`${role ? role : ''} logo`}
+            onClick={e => e.preventDefault()}
         >
             <img
                 className="logo__image"

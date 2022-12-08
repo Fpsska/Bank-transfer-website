@@ -10,12 +10,13 @@ import './nav.scss';
 
 interface propTypes {
     role?: string;
+    navLinkHandler?: () => void;
 }
 
 // /. interfaces
 
 const Nav: React.FC<propTypes> = props => {
-    const { role } = props;
+    const { role, navLinkHandler } = props;
 
     // /. props
 
@@ -36,6 +37,7 @@ const Nav: React.FC<propTypes> = props => {
                                 className="nav__link"
                                 to={template.link}
                                 state={template.text}
+                                onClick={navLinkHandler}
                             >
                                 {template.text}
                             </NavLink>
