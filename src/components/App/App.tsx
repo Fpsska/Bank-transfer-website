@@ -44,7 +44,7 @@ const App: React.FC = () => {
     };
 
     const onFormSubmit = (e: React.FormEvent): void => {
-        e.preventDefault;
+        e.preventDefault();
         // ** //
         console.log('sending data: ', {
             time: new Date().toLocaleString(),
