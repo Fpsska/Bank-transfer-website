@@ -57,15 +57,21 @@ const MainPage: React.FC = () => {
                         Now Buy Your PIN or <a href="#">Top Up</a> With With
                         Bank Transfer
                     </h1>
-                    <p className="about__description">
-                        {requestError ? (
-                            <span>Sorry, something went wrong</span>
-                        ) : requestStatus !== 'success' ? (
-                            <span>Waiting for data loading</span>
+                    <>
+                        {requestStatus !== 'success' || requestError ? (
+                            <div className="text-loader text-loader-about">
+                                <span>L</span>
+                                <span>O</span>
+                                <span>A</span>
+                                <span>D</span>
+                                <span>I</span>
+                                <span>N</span>
+                                <span>G</span>
+                            </div>
                         ) : (
-                            subtitleText
+                            <p className="about__description">{subtitleText}</p>
                         )}
-                    </p>
+                    </>
                     <form
                         className="about__form callRequest-form"
                         ref={formRef}

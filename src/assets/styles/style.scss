@@ -80,6 +80,41 @@ body {
     text-align: center;
 }
 
+.text-loader {
+    display: inline-block;
+    font-size: 84px;
+    text-align: center;
+
+    span {
+        display: inline-block;
+        margin: 0 useRem(4);
+        animation: wave 1s infinite;
+
+        @for $i from 1 through 6 {
+            &:nth-child(#{$i+1}) {
+                animation-delay: #{$i*.1}s;
+            }
+        }
+    }
+}
+
+.text-loader-about {
+    margin: useRem(112) 0 useRem(100) 0;
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(useRem(14));
+    }
+}
+
+
 // /. reusable styles
 
 .about {

@@ -22,7 +22,10 @@ const App: React.FC = () => {
     // /. hooks
 
     useEffect(() => {
-        dispatch(fetchTextData());
+        const timer = setTimeout(() => {
+            dispatch(fetchTextData());
+        }, 1800);
+        return () => clearInterval(timer);
     }, []);
 
     // /. effects

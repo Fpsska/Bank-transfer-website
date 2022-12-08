@@ -22,7 +22,7 @@
     }
 }
 
-// /. variables
+// /. animations
 
 @media screen and (max-width: 992px) {
     .about__wrapper.about__wrapper {
@@ -52,20 +52,6 @@
 }
 
 @media screen and (max-width: 525px) {
-    // .about .about__peview {
-    //     display: none;
-    // }
-
-    // .container.container {
-    //     padding: 0 useRem(20);
-    // }
-
-    // .about__wrapper.about__wrapper {
-    //     grid-template-areas:
-    //         'content'
-    //         'users';
-    // }
-
     .circle.circle {
         width: useRem(350);
         height: useRem(350);
@@ -88,6 +74,13 @@
         padding: useRem(50) 0 0 0;
     }
 
+    .text-loader-about {
+        width: 100%;
+
+        span {
+            font-size: useRem(70);
+        }
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -163,5 +156,19 @@
     .users-list__template.users-list__template {
         width: useRem(48);
         height: useRem(48);
+    }
+
+    .text-loader-about {
+        span {
+            font-size: useRem(50);
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .text-loader-about {
+        span {
+            font-size: useRem(45);
+        }
     }
 }
