@@ -39,6 +39,7 @@ const mainSlice = createSlice({
             action: PayloadAction<string[]>
         ) => {
             state.requestStatus = 'success';
+            state.requestError = null;
             state.subtitleText = action.payload[0];
         },
         [fetchTextData.rejected.type]: (

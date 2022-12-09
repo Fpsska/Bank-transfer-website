@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import './logo.scss';
 
 // /. imports
@@ -15,10 +17,9 @@ const Logo: React.FC<propTypes> = props => {
     const { role, img } = props;
 
     return (
-        <a
-            href="#"
+        <Link
+            to="/LuckyGroup-SPA-Task/"
             className={`${role ? role : ''} logo`}
-            onClick={e => e.preventDefault()}
         >
             <img
                 className="logo__image"
@@ -26,7 +27,7 @@ const Logo: React.FC<propTypes> = props => {
                 alt="logo"
             />
             <span className="logo__text">Global</span>
-        </a>
+        </Link>
     );
 };
 
