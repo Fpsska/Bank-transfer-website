@@ -5,5 +5,10 @@
 .logo {
     &__image {
         margin-right: useRem(10);
+        width: useRem(40);
+        height: useRem(40);
+        overflow: hidden;
+        border-radius: 100%;
+        object-fit: cover;
     }
 }
