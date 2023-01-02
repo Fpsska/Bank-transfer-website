@@ -25,13 +25,10 @@
         &:nth-child(3) {
             z-index: -1;
         }
-
-        &:nth-child(4) {
-            z-index: -2;
-        }
     }
 
     &__template--add {
+        z-index: -2;
         background-color: $orange-color;
 
         &:hover {

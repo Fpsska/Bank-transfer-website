@@ -7,7 +7,7 @@ import { fetchTextData } from '../api/fetchTextData';
 interface mainSliceTypes {
     subtitleText: string;
     requestStatus: string;
-    requestError: null | string;
+    requestError: any;
     isBurgerVisible: boolean;
 }
 
@@ -30,25 +30,42 @@ const mainSlice = createSlice({
             state.isBurgerVisible = action.payload;
         }
     },
-    extraReducers: {
-        [fetchTextData.pending.type]: state => {
-            state.requestStatus = 'loading';
-        },
-        [fetchTextData.fulfilled.type]: (
-            state,
-            action: PayloadAction<string[]>
-        ) => {
-            state.requestStatus = 'success';
-            state.requestError = null;
-            state.subtitleText = action.payload[0];
-        },
-        [fetchTextData.rejected.type]: (
-            state,
-            action: PayloadAction<null | string>
-        ) => {
-            state.requestStatus = 'failed';
-            state.requestError = action.payload;
-        }
+    // extraReducers: {
+    //     [fetchTextData.pending.type]: state => {
+    //         state.requestStatus = 'loading';
+    //     },
+    //     [fetchTextData.fulfilled.type]: (
+    //         state,
+    //         action: PayloadAction<string[]>
+    //     ) => {
+    //         state.requestStatus = 'success';
+    //         state.requestError = null;
+    //         state.subtitleText = action.payload[0];
+    //     },
+    //     [fetchTextData.rejected.type]: (
+    //         state,
+    //         action: PayloadAction<null | string>
+    //     ) => {
+    //         state.requestStatus = 'failed';
+    //         state.requestError = action.payload;
+    //     }
+    // }
+    extraReducers: builder => {
+        builder
+            .addCase(fetchTextData.pending, state => {
+                state.requestStatus = 'loading';
+            })
+            .addCase(fetchTextData.fulfilled, (state, action) => {
+                state.requestStatus = 'success';
+                state.requestError = null;
+                state.subtitleText = action.payload[0];
+            })
+            .addCase(fetchTextData.rejected, (state, action) => {
+                state.requestStatus = 'failed';
+                if (action.payload) {
+                    state.requestError = action.payload;
+                }
+            });
     }
 });
 
