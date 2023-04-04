@@ -34,7 +34,7 @@ const App: React.FC = () => {
         <div className="App">
             <Routes>
                 <Route
-                    path="LuckyGroup-SPA-Task"
+                    path="Bank-transfer-website"
                     element={<Layout />}
                 >
                     <Route
